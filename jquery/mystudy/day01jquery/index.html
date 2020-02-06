@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = "../../jquery-1.12.2.js"></script>
+    <script>
+                //js的加载事件
+                window.onload =  function (){
+                    console.log("js提醒你:你有病");
+                }
+                window.onload = function (){
+                    console.log("js : 得治"); //这个事件把第一个给覆盖了
+                }
+                //jquery实现加载第一种写法
+                $(window).load(function (){
+                    console.log("jquery : 你有病");
+                });
+                $(window).load(function (){
+                    console.log("jquery:得治")
+                });
+                //jquery的第二种方法页面中的元素解析完成就触发
+                $(window).ready(function (){
+                    console.log("元素解析完成执行$(window).ready(function)");
+                });
+
+                //页面解析完毕就触发
+                jQuery(function(){
+                    console.log("元素解析完成执行jQuery");
+                });
+                //页面解析完成就执行。
+                $(function () {
+                    console.log("元素解析完成执行$(function)")
+                });
+    </script>
+    <script>
+            //jquery版本:
+                    //1.x支持老浏览器
+                    //2.x 不支持老浏览器
+                    //3.X   不支持老浏览器
+            //jquery中$是什么
+                //window.$和window.jQuery等价是一个函数
+                //jQuery文件是一个自执行函数,执行这个jquery文件中的代码,其实就是执行这个函数.
+                //这个自执行文件就是给window对象添加一个jquery属性和$属性。
+            //4.$是一个函数
+            //参数传递不同，效果不同，可以是选者器/创建一个标签 /把dom对象转化为jquery对象
+            var a=$('<div>mmp</div>');          //创建标签  
+
+            //代码练习../mytestcode/index.html
+            {//dom对象和jquery对象
+                //dom对象不可以调用jquery里面的方法
+                //jquery只能用jquery的对象和方法,不能用调用原声的jsdom对象.
+                //jQuery对象是dom对象的伪数组,是dom的一个包装集
+                        /*1.dom和jquery对象之间的相互转化
+                                $("domelem");   //将dom对象转化为jquery对象
+                                jQueryelem[index],  //jquery转化为dom对象
+                                jQueryelem.get(index);  //jquery转化为dom对象。
+                        */
+                            
+            }
+    
+            
+            {/*text()使用,
+                    1.不给参数就可以获取到了,包括子元素的文本
+                    2.设置文本,加上参数 ，参数就是要设置的文本.;
+                                注意:设置文本时，如果该jquery里面的dom元素里面有子元素，会把子元素都去掉
+
+                    注意:包含多个dom元素的jquery对象使用text()会获取所有元素的文本。
+
+            */}
+    </script>
+    <style>
+            #mydiv{
+                width: 100px;
+                height: 100px;
+                background: black;
+                position:absolute;
+                left:90px;
+                top:100px;
+            }
+    </style>
+</head>
+<body>
+        <div id="mydiv"></div>
+</body>
+</html>

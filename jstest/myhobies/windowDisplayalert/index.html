@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <button id= "button01">window.open()</button>
+</body>
+<script>
+    var main = {
+        //获取元素节点
+        button01 : document.getElementById("button01"),
+        //定义一个打开窗口的方法
+        button01click : function (msg){
+            this.button01.addEventListener("click",function(){
+                //打开子窗体
+                myWindow=window.open("","newwindow","height=100, width=300, top=0, left=400, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no");
+                //把信息写入子窗体里面，并在子窗体里面写入一个关闭该窗体的方法
+                myWindow.document.write("<p>"+msg+"</p><button style='float:right;' onclick='window.close();'>确定</button>");
+                //将该窗体放在最前面
+                myWindow.focus();
+            }) 
+        }
+    }
+    main.button01click("msg");
+</script>
+</html>

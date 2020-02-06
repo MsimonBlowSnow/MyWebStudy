@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //深度复制
+            function copy(org,tar){
+                    for(var obj in org){
+                            if(typeof org[obj] == "object"){
+                                    console.log(obj);
+                                    if(org[obj]  instanceof Array){
+                                        tar[obj]=[];
+                                        copy(org[obj],tar[obj]);
+                                    }else{
+                                        tar[obj]={};
+                                        copy(org[obj],tar[obj]);
+                                    }
+                            }else{
+                                  //  console.log(org[obj]);
+                                    //console.log(tar[obj]);
+                                    tar[obj] = org[obj];
+                            }
+                    }
+                }
+                var a={
+                    name:"ming",
+                    sex:"男",
+                    age:20,
+                    family:{
+                            son:"ming1",
+                            brother:"undefined"
+                    }
+                }
+                var b={};
+                copy(a,b);
+
+                function copy1 (obj) {
+                        var newobj =( obj.constructor === Array ? [] : {});
+                    if(typeof obj !== 'object'){
+                        return;
+                    }
+                    for(var i in obj){
+                            newobj[i] = typeof obj[i] === 'object' ?
+                            copy(obj[i]) : obj[i];
+                    }
+                    return newobj;
+                }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

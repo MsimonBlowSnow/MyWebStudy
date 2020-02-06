@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../jquery-1.12.2.js" ></script>
+    <style type="text/css">
+            *{
+                margin : 0;
+                padding: 0;
+                font-family: "微软雅黑";
+                color : #333333
+            }
+            body,td,th{
+                font-size:  14px;
+                font-family: 微软雅黑;
+            }
+            a{
+                text-decoration: none;
+            }
+            a :link  {
+                text-decoration: none;
+            } 
+            a:visited {
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: none;
+                background-color:skyblue;
+            }
+            a:active{
+                text-decoration: none;
+            }
+            .f_td{
+                border-bottom-width: 1px;
+                border-bottom-style: dashed;
+                border-bottom-color: #333;
+                background-color: #fff;
+                font-size:14px;
+            }
+            ul.tabs{
+                list-style:none;
+                margin-left: 70px;
+            }
+            ul.tabs li{
+                margin : 0;
+                padding:0;
+                float :left;
+                width: 50px;
+                height : 20px;
+                line-height: 26px;
+                font-size: 16px;
+            }
+            ul.tabs li a.active{
+                display: block;
+                width: 50px;
+                height: 26px;
+                line-height: 26px;
+                background-color: #66CCFF;
+                color: #fff;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+            <table  width="300" cellpadding="0" cellspacing="0">
+                <tr>
+                        <td height="50" style="font-size: 22px;" valign="bottom"> 电影排行</td>
+                        <td  valign="bottom">
+                            <ul class="tabs">
+                                <li><a href=""  name="#tab01">热播</a></li>
+                                <li><a href=""  name="#tab02">经典</a></li>
+                        </ul></td>
+                    </td>
+                </tr>
+            </table>
+            <div id="tab01" class="tab_content">
+                <table width="300" cellpadding="0" cellspacing="0">
+                    <script>
+                        var num = 1;
+                        var nameArr = new Array("终结者5","飓风营救","我是传奇","一线声机","罗马假日","史密斯夫妇","午夜邂逅");
+                        var dnumArr = new Array ("阿诺德.斯瓦辛格","连姆.尼森","威尔.史密斯","杰森.斯坦森","隔离高利.派克","布拉德.皮特","克里斯.埃文斯");
+                            for(var i = 0; i<nameArr.length; i++){
+                                document.write('<tr height="43">');
+                                document.write("<td width='26' class='f_td'>"+(num++)+'</td>');
+                                document.write('<td width="75"  class = "f_td"><a href="#">'+nameArr[i]+'</td>');
+                                document.write('<td width="90"  class = "f_td">'+dnumArr[i]+'</td></tr>');
+                            }
+                    </script>
+                </table>
+            </div> 
+                    <div id="tab02" class="tab_content">
+                            <table algin="center" width="300"  cellpadding="0" cellspacing="0">
+                                <script>
+                                    var num = 1;
+                                    var nameArr = new Array("机械师2: 复活","变形金刚","暮光之城","怦然心动","电话情缘","超凡蜘蛛侠","雷神");
+                                    var dnumArr = new Array ("杰森.斯坦森","希亚.拉博夫","克里斯汀.斯图尔特","玛德琳.卡罗尔","杰西.麦特卡尔菲","安德鲁.加菲尔德","克里斯.海姆斯沃斯");
+                                        for(var i = 0; i<nameArr.length; i++){
+                                            document.write('<tr height="43">');
+                                            document.write("<td width='26' class='f_td'>"+(num++)+'</td>');
+                                            document.write('<td width="75"  class = "f_td"><a href="#">'+nameArr[i]+'</td>');
+                                            document.write('<td width="90"  class = "f_td">'+dnumArr[i]+'</td></tr>');
+                                        }
+                                </script>
+                            </table>
+                        </div> 
+                        
+</body>
+    <script type = "text/javascript">
+                //定义一个加载函数
+                $('document').ready(function(){   
+                    //给标题加一个hover事件
+                    $(".tab_content").hide();
+                    $("ul.tabs li a").hover(function (){
+                        //使用remove移除active的属性
+                        $("ul.tabs li a").removeClass("active");
+                        $("this").addClass("active");
+                        //没有移到的标题隐藏掉
+                        $(".tab_content").hide();
+                        //获取标题相关的内容
+                        var activeTab = $(this).attr("name");
+                        //获取到的标题主题内容展示出来。
+                        $(activeTab).show();
+                    });
+                });
+    </script>
+</html>

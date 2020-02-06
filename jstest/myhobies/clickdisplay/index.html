@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>隐藏</button>
+    <div style=" background:black;width:200px;height: 200px;display:display;"></div>
+</body>
+<script>
+        var clickChange  = {
+            button : document.getElementsByTagName("button")[0],
+            div : document.getElementsByTagName("div")[0],
+            click : function (){
+                this.button.onclick = function (){
+                    if(this.innerText == "隐藏") {
+                        this.innerText = "显示";
+                        clickChange.div.style.display = "none";
+                    }else{
+                        this.innerText = "隐藏";
+                        clickChange.div.style.display = "block";
+                    }
+                }
+            }
+        }
+        clickChange.click();
+</script>
+</html>

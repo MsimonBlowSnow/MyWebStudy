@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0 auto;
+            margin:  0 auto;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: #ccc;
+        }
+        footer{
+            width: 100%;
+            height: 100px;
+            background-color: #ccc;
+        }
+        nav{
+            width: 100%;
+            height: 50px;
+            background-color: #888;
+        }
+        main{
+            width: 100%;
+            height: 500px;
+            display: flex;
+            background-color: #eee;
+        }
+        article{
+            width: 70%;
+            height: 500px;
+            background-color: #f00;
+        }
+        aside{
+            width: 30%;
+            height: 500px;
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        支持html5，除了ie9(不包括)以下的主流浏览器都支持 
+        增加了其他的新特性:语言特性，本地存储，网页多媒体，二维三维特效
+
+    -->
+    <!--html5以前-->   
+<!-- <div class="header">头部</div> 
+    <div class="nav">导航条</div>
+    <div class="mainContect">
+        <div class="left" styrrrrrrrrm>左主体</div>
+        <div class="right">有主体</div>
+    </div>   
+    <div class="footer">页脚</div>
+-->
+    <!--html5
+        ie9不是全部支持，部分支持，把语义化标签解释为行级元素,要加上display: block.
+    -->
+    <header>页眉</header>
+    <nav>导航条</nav>
+    <main>
+        <article>文章</article>
+        <aside>主体内容</aside>
+    </main>
+    <footer>页脚</footer>
+</body>
+</html>

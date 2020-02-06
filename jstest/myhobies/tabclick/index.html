@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        nav{
+            box-sizing: border-box;
+            display: flex;
+        }
+        div{
+            width: 100px;
+            color:white;
+            background-color: #424242;
+            height: 50px;
+            margin-left:50px ;
+        }
+     /*    div:hover{
+            
+        } */
+        .div{
+            background-color:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </nav>
+</body>
+<script>
+        var tab = {
+            divs : document.getElementsByTagName("div"),
+            onmoveChange : function (){
+                for(var i =0 ; i<this.divs.length;i ++){
+                    this.divs[i].onmouseover = function (){
+                    this.className = "div";
+                    var sibling = this.parentNode.childNodes;
+                    for (var j= 0;j < sibling.length ;j ++){
+                        if(sibling[j].nodeType == 1&& sibling[j] !=this){
+                            sibling[j].className = "";                        
+                        }
+                    }
+                }
+                    this.divs[i].onmouseout = function () {
+                        this.className = "";
+                    }
+                }
+        }
+        }
+        tab.onmoveChange();
+</script>
+</html>

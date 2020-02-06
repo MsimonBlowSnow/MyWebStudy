@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script defer>
+        var color = {
+            td : document.getElementsByTagName("td"),
+            button : document.getElementsByTagName("button")[0], 
+            colorChange : function (){
+                addEventListener("click",function (){
+                    for (var  i = 0 ; i<color.td.length ; i++){
+                        if(i%3 == 0){
+                            color.td[i].className = "red";
+                        }else if (i %3 == 1){
+                            color.td[i].className = "green";
+                        }else
+                           color. td[i].className = "blue";
+                    }
+                }, false)
+            },
+            colortext :0,
+            font : document.getElementsByTagName("span"),
+            colorauto : function (){
+                var i = 0;
+                setInterval(function (){
+                   if(color.colortext != 25555255)
+                         color.colortext ++;
+                    else{
+                        color.colortext = 0; 
+                    }
+                    color.font[0].style.color = "#"+ color.colortext.toString(16);
+                },10);
+            }
+        }
+        color.colorChange();
+    </script>
+    <style>
+        table{
+            width: 100%;
+            height: 1000px;
+        }
+    td{
+            width: 100%;
+            height: 50px;
+            box-sizing: border-box;
+            background-color: #eee;
+            border: black 2px solid;
+    }
+    .red{
+        background-color: #f00;
+    }
+    .green{
+        background-color: #0f0;
+    }
+    .blue{
+        background-color: #00f;
+    }
+    </style>
+    
+</head>
+<body>
+        <button>隔行变色</button>
+        <span style="color:#000">mmp</span>
+        <table>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+        </table>
+</body>
+</html>

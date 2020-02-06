@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #alert_box{
+                background-color: aqua;
+                color: black;
+                position:absolute;
+                top: 50%;
+                left:50%;
+        }
+    </style>
+    <script async>
+            window.alert = function (title,info){
+                    var box = document.getElementById("alert_box");
+                    var html = '<dl><dt>'+ title + '</dt><dd>' + info + '</dd></dl>';
+                        if(box){
+                                box.innerHTML = html;
+                                box.style.display = "block";
+                        }else{
+                                var div = document.createElement("div");
+                                div.id = "alert_box";
+                                div.style.display = "block";
+                                document.body.appendChild(div);
+                                div.innerHTML = html;
+                                div.onclick = function (){
+                                    this.style.display ="none";
+                                }
+                        }
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

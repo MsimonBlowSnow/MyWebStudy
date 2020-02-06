@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form action="https://www.baidu.com" method="GET">标签   
+            <label for="man">
+                    男<input type="radio" value="男" name="sex" id='man'>
+                </label>
+                <label>
+                    女<input type="radio" value="女" name="sex"> 
+                </label><br>
+                邮&nbsp;&nbsp;&nbsp;&nbsp;箱:<input type="email" placeholder="请输入一个邮箱地址" name="eamial" id="eamail"  时>
+                <br>电&nbsp;&nbsp;&nbsp;&nbsp;话:<input type="number" placeholder="请输入你的电话" name="phone" id="phone">
+               
+            </form>
+            <hr>
+            <form action="#"  method="get" id="ming_form">
+                <input list="ming" type="text" name="link" >
+                <!-- <datalist id="ming">
+                        <option value="北冥雪" label="beimingxue">北冥雪</option>
+                        <option value="北冥正" lable="beimingzheng">北冥正</option>
+                        <option value="北冥雷" label="beiminglei">北冥雷</option>
+                        <option value="东方明珠" label="dongfangmingzu">东方明珠</option>
+                        <option value="东方雄" label="dongfangxiong">东方雄</option>
+                        <option value="东方铁心" label="gongfangmingzu">东方铁心</option>
+                        <option value="南宫问天" label="nangongwentian">南宫问天</option>
+                        <option value="南宫适" label="nangongshi">南宫适</option>
+                        <option value="南宫逸" label="nangongyi">南宫逸</option>
+                        <option value="西门吹雪" label="ximencuixue">西门吹雪</option>
+                        <option value="西门子" label="ximengzi">西门子</option>
+                        <option value="西门庆" label="ximengqin">西门庆</option>
+                </datalist>                 -->
+
+            <datalist id="ming">
+                        <option value="好人卡" label="haorenka">好人卡</option>
+                        <option value="天天向上" lable="tiantianxiangshang">天天向上</option>
+                        <option value="好好学习" label="haohaoxuexi">好好学习</option>
+                </datalist>
+                <br>name:<input type="text" pattern="[A-Za-z0-9]{6,8}"  name="aa" placeholder="6-8个数字或者字母" autofocus>    
+                <br><input type="submit" value="submit">
+            </form>
+            <input type="text"  id="aaaa" form="ming_form" name="aaa" />
+</body>
+</html>

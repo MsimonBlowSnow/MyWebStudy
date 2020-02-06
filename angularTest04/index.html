@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .divborder{
+            border: 1px red solid;
+            padding: 10px;
+        }
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var my_module=angular.module("myapp",[]);
+        my_module.controller("myctr",[function () {
+            var index=-1;
+            this.hide=false;  //控制表单模块显示与隐藏
+            this.border="divborder";
+            this.btnvalue="确定";
+
+            //数据存储
+            this.data=[
+                {uid:"A001",username:"小张",userage:20,useraddress:"北京"},
+                {uid:"A002",username:"小李",userage:20,useraddress:"北京"},
+                {uid:"A003",username:"小王",userage:20,useraddress:"北京"}
+            ];
+
+            //数据模型
+            this.username="";
+            this.useraddress=""
+            this.userage=1;
+            this.uid="";
+            this.usersex=1;
+            this.welcome="hello angularJS";
+            //新增、修改
+            this.add=function () {
+                //在此处应该有数据验证
+                var userdata={uid:this.uid,username:this.username,userage:this.userage,useraddress:this.useraddress};
+                 if(this.btnvalue=="添加"){
+                     this.data.push(userdata);
+                 }else if(this.btnvalue=="修改"){
+                     this.data[index]=userdata;
+                     this.btnvalue="修改";
+                 }
+            };
+            this.edit=function (index_edit) {
+                var userobj=this.data[index_edit];
+                this.uid=userobj.uid;
+                this.userage=userobj.userage;
+                this.username=userobj.username;
+                this.useraddress= userobj.useraddress;
+                this.hide=true;
+                this.btnvalue="修改";
+                index=index_edit;
+            };
+            this.adduser=function () {
+                this.hide=true;
+                this.btnvalue="添加";
+            };
+            this.delete=function (index) {
+                this.data.splice(index,1);
+            }
+
+        }]);
+
+    </script>
+</head>
+<body ng-app="myapp"  ng-controller="myctr as c">
+      <h1 ng-bind="c.welcome"></h1>
+      <div class="container" ng-class="c.border" ng-show="c.hide">
+          编号:<input ng-model="c.uid" ><p></p>
+          姓名:<input ng-model="c.username"><P></P>
+          年龄:<input type="number" ng-model="c.userage"><p></p>
+          地址: <input type="text" ng-model="c.useraddress"><p></p>
+          <input type="button"  ng-value="c.btnvalue" ng-click="c.add()">
+      </div>
+      <p>
+          <button ng-click="c.adduser()">新增</button>
+      </p>
+     <table border="" width="500">
+         <tr>
+             <td>编号</td>
+             <td>姓名</td>
+             <td>年龄</td>
+             <td>地址</td>
+             <td>操作</td>
+         </tr>
+         <tr ng-repeat="item in c.data">
+             <td>{{item.uid}}</td>
+             <td ng-bind="item.username"></td>
+             <td>{{item.userage}}</td>
+             <td ng-bind="item.useraddress"></td>
+             <td>
+                 <span title="" ng-click="c.edit($index)">修改</span>
+                 <span title="" ng-click="c.delete($index)">删除</span>
+             </td>
+         </tr>
+
+
+     </table>
+
+     <button ng-click="c.add()">添加</button>
+</body>
+</html>

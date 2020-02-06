@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script> 
+            //创建对象
+            //var 对象名={属性名:属性职,属性名:属性职} 
+            var  ming={
+                name:"ming",
+                sex:"男",
+                age:"24",
+            }
+            function a(){
+                document.write("姓名:"+ming.name+"<br>") ;
+                document.write("性别:"+ming.sex+"<br>");
+                document.write("年龄:"+ming.age);
+            }
+            //通过数组的方式进行输出
+            function b(){
+                document.write("姓名:"+ming['name']+"</br>");
+                document.write("性别:"+ming['sex']+"</br>");
+                document.write("年龄:"+ming['age']+"</br>");
+            }
+    </script>
+</head>
+<body>
+    <button  onclick="a();">通过.获得信息</button></br>
+    <button  onclick="b();">提示数组信息</button>
+</body>
+</html>

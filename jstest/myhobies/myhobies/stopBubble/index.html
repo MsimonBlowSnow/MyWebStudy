@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #grandfather{
+            width: 400px;
+            height: 400px;
+            background-color: black;
+        }
+        #father{
+            width: 200px;
+            height:  200px;
+            background-color:crimson;        
+        }
+        #son{
+            width: 100px;
+            height: 100px;
+            background-color:aquamarine;
+        }    
+    </style>
+</head>
+<body>
+        <div id="grandfather">
+            <div id="father">
+                <div id="son"></div>
+            </div>
+        </div>
+        <script>
+                var grandfather = document.getElementById("grandfather");
+                var father =  document.getElementById("father");
+                var son =  document.getElementById('son');
+                son.onclick = function (e){
+
+                    //stopBubble(e);
+                    console.log(this);
+                    console.log(e.eventPhase);
+                }
+                father.onclick = function (e){
+                    console.log(this);
+                    console.log(e.eventPhase);
+                }
+                grandfather.onclick = function (e){
+                    console.log(this);
+                     console.log(e.eventPhase);
+                }
+                function stopBubble(e){
+                        //判断是否为IE9
+                        if(e.stopPropagation){   //IE9没有
+                            e.stopPropagation();
+                            console.log("非ie9");
+                        }else{
+                                e.cancelBubble = true;
+                        }
+                }
+        </script>
+</body>
+</html>

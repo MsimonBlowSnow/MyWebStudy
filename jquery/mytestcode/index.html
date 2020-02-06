@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+        }
+        .online{
+            background-color: white;
+        }
+        .offline{
+            background-color: black;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+</head>
+<body class="offline">
+        <button id="line">开灯</button>
+
+</body>
+<!-- <script>
+        //js实现
+        window.onload = function (){
+            var  line = {
+                button : document.getElementById('line'),
+                click : function (){
+                    this.button.onclick = function (){
+                        console.log(line.button.innerText);
+                        if(this.innerText == "开灯"){
+                            document.body.className = "online";
+                            this.innerText = "关灯";
+                        }else{
+                            document.body.className ="offline";
+                            this.innerText = "开灯";
+                        }
+                    }
+                }
+            }
+            line.click();
+        }
+</script> -->
+<script>
+    $(function(){
+                var line = {
+                    click : function (){
+                        $("#line").click(function (){
+                            console.log(this.innerText == "开灯");
+                            if(this.innerText ==  "开灯"){
+                                $('body').removeClass("offline");
+                                $('body').addClass("online");
+                                this.innerText = "关灯";
+                            }else{
+                                $('body').removeClass("online");
+                                $('body').addClass("offline");
+                                this.innerText="开灯";
+                            }
+                        })
+                    }
+                }
+                line.click();
+            })
+</script>
+</html>

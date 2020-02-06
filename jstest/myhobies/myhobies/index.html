@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的星空</title>
+            <style>
+                body{
+                    margin: 0 auto;
+                    padding: 0; 
+                    background: #ccc;
+                }
+                 #all{
+                     margin:  auto auto;
+                    width:  560px;
+                    height: 640px;
+                    background-color: #333;
+                 }
+                 #game{
+                     width: 300px;
+                     height: 600px;
+                     border:  #999 solid 20px;
+                     margin: 0px;
+                     padding: 0px;
+                     float: left;
+                 }
+                 #data{
+                    width: 200px;
+                     height: 600px;
+                     border:  #999 solid 20px;
+                     border-left: 0px;
+                     margin: 0px;
+                     padding: 0px;
+                     float: left;
+                 }
+                 #head,.snake{
+                     border: 0px;
+                    height: 20px;
+                    width: 20px;
+                    background-color:#fff;
+                    position:relative;
+                    left: 140px;
+                    top:140px; 
+                    /*display: none;*/
+                 }
+                 #text{
+                     color:#fff;
+                     margin: 200px auto 0px;
+                     width: 50px;
+                     height: 60px;
+                     line-height: 60px;
+                 }
+                 #score{
+                     background: #999;
+                     font-size: 40px;
+                    color:#fff;
+                    text-align: right;
+                     margin: 0px auto;
+                     width: 100px;
+                     height: 60px;
+                     line-height: 60px;    
+                 }
+                 #operator{
+                     display: block;
+                     position: relative;
+                     top:200px;
+                     left: 120px;
+                     width: 100px;
+                     height: 80px;
+                 }
+                 button{
+                     margin-top: 10px;
+                 }
+            </style>
+            <script>
+                    function  begin(){
+                    
+                   
+                    
+                    
+                    
+                    
+                    
+                    function display(x){
+                        if(x.display.equals("none"))
+                            x.display=block;
+                        else
+                            x.display=none;   
+                    }
+
+                }
+
+                function readText(){
+                        alert("游戏说明: \n白色的是蛇头,上下左右控制,一个食物一分!");
+                        cosole.console.log(1);
+                        
+                    }
+                function closeWindows(){
+                    if (confirm("您确定要退出游戏？")){
+                        window.opener=null;
+                        window.open('','_self');
+                        window.close();
+                    }
+                  else{}
+                }
+            </script>
+</head>
+<body onload="begin()">
+     <div id="all">
+        <div id="game">
+                <div id="head"></div>
+                <div id="operator">
+                    <button onclick="playgame()">开始游戏</button><br>
+                    <button onclick="readText()">帮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;助</button><br>
+                    <button onclick="closeWindows()">退出游戏</button><br>
+                </div>
+                </div>   
+        <div id="data">
+        <span>
+            <div id="text">得&nbsp;&nbsp;&nbsp;&nbsp;分:</div>
+            <div id="score">0</div>
+        </span>
+        </div>
+     </div>
+</body>
+</html>

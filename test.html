@@ -1,0 +1,139 @@
+<html>    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <link rel="stylesheet" href="boostrap/bootstrap-3.3.7/dist/css/bootstrap.css">
+<head>    
+
+<style type="text/css">    
+
+div {
+    border: 1px solid black;
+}
+#redP p {    
+
+/* 权值 = 100+1=101 */    
+
+color:#F00;  /* 红色 */    
+
+}    
+
+#redP .red em {    
+
+/* 权值 = 100+10+1=111 */    
+
+color:#00F; /* 蓝色 */    
+
+}    
+
+#redP p span em {    
+
+/* 权值 = 100+1+1+1=103 */    
+
+color:#FF0;/*黄色*/    
+
+}    
+
+</style>    
+
+</head>    
+
+<body>    
+
+<div id="redP">   
+
+<p class="red">red   
+
+<span><em>em red</em></span>    
+
+</p>    
+
+<p>red</p>   
+
+</div>    
+<div class="form-group has-success has-feedback">
+    <label class="control-label" for="inputSuccess2">Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="inputSuccess2Status" class="sr-only">(success)</span>
+  </div>
+  <div class="form-group has-warning has-feedback">
+    <label class="control-label" for="inputWarning2">Input with warning</label>
+    <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+    <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+    <span id="inputWarning2Status" class="sr-only">(warning)</span>
+  </div>
+  <div class="form-group has-error has-feedback">
+    <label class="control-label" for="inputError2">Input with error</label>
+    <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="inputError2Status" class="sr-only">(error)</span>
+  </div>
+  <div class="form-group has-error has-feedback">
+    <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2">
+    </div>
+    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+    <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+  </div>
+<form class="form-inline">
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputEmail3">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+    </div>
+    <div class="form-group input-group">
+      <label class="sr-only" for="exampleInputPassword3">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-default">Sign in</button>
+  </form>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    <!-- Optional: clear the XS cols if their content doesn't match in height -->
+    <div class="clearfix visible-xs-block"></div>
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  </div>
+  <p class="text-left">Left aligned text.</p>
+  <p class="text-center">Center aligned text.</p>
+  <p class="text-right">Right aligned text.</p>
+  <p class="text-justify">Justified text.</p>
+  <p class="text-nowrap">No wrap text.</p>
+    <div class="row">
+     <div class ="col-md-3 col-md-push-9">
+        <img src="jstest/myhobies/轮播图/img/8.jpg" alt="信息错误" class="img-circle ">
+    </div>
+    </div>
+
+</body>
+<script>
+    function a(){
+        var arr=[];
+        for (var i=0;i<10;i++){
+            arr[i] = function (){
+                console.log(i);
+            }
+        }
+        return arr;
+    }
+    function b(){
+        var arr =[];
+        for(let i=0;i<10;i++){
+            arr[i]= function (){
+                console.log(i);
+            }
+        }
+        return arr;
+    }
+</script>   
+</html>

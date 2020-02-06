@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise</title>
+    <!--必须有网-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+    <script>
+        let user;
+        let username;
+        /* 
+        $.get('https://api.github.com/users',data=>{
+            console.log("fetch user repos");
+            user = data[0].login;
+            console.log(user);
+            $.get(`https://api.github.com/users/${user}/repos`,data=>{
+                console.log('data');
+                console.log(data);
+            });
+        }) */
+        
+        /*
+            通过使用axios中的ajax请求会返回一个promise对象，使用promise.then实现链式调用
+        */
+       const users = axios.get('https://api.github.com/users');
+        //监听上面的users
+       users.then(reponse => {
+        username = reponse.data[0].login; 
+        console.log(reponse);
+               return axios.get(`https://api.github.com/users/${username}/repos`);
+       }).then(reponse=>{
+           console.log(reponse.data);
+       }).catch(err=>{
+           console.log(err);
+       })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

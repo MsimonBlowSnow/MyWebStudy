@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    select{
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+</style>
+<body>
+    <select name="year" id="year">
+    </select>
+    <select name="month" id="month" >
+    </select >
+    <select name="day" id="day">
+    </select>
+</body>
+<script>
+        var tmp = {
+            //获取3个输入框
+            years : document.getElementById("year"),
+            days : document.getElementById("day"),
+            months  : document.getElementById("month"),
+            //创建年月
+            createElem : function (){
+                //动态创建年
+                var year = 1970;
+                while(year <=2100){
+                        option = document.createElement("option");
+                        option.innerText = year + "年";
+                        option.value = year;
+                        year++;
+                        this.years.appendChild(option);
+                }
+                //动态创建月
+                var month =12;
+                while(month != 0) {
+                        option =document.createElement("option");
+                        option.innerText = "第" +month + "月";
+                        option.value =  month;
+                        this.months.appendChild(option);
+                        month--;
+                }
+            },
+            //动态改变日期框
+            createDay : function (){
+                var year = this.years.value;
+                var month = this.months.value;
+                var  day;
+                 var option;
+                  var flag = false;
+                  //判断是否是闰年
+                if((year%4==0&&year%100!=0)||year%400 == 0){
+                    flag = true;
+                }
+                //判断每个月的日期数
+                if(month == 2){
+                    if(flag)
+                        day = 29;
+                    else
+                        day = 28;
+                }else if ((month%2 == 1&&month>7) || (month%2 == 0 && month<8)  ){
+                        day = 30;
+                }else if ((month%2 == 0 && month >7) || (month%2 == 1 && month <8 )){
+                            day = 31;
+                }
+                //清空动态日期select
+                this.days.innerHTML = "";
+                dayMax = day;
+                while(day != 0){
+                    //日期选项框
+                    option = document.createElement("option");
+                    option.value = day;
+                    option.innerText = "第"+day + "日";
+                    //将最大的日期数设置为默认日期
+                    if(day == dayMax){
+                        option.setAttribute("selected","true");
+                    }
+                    this.days.appendChild(option);
+                    day--;
+                }
+            }
+        }   
+        tmp.createElem();
+        //给年选项框设置失焦时间
+        tmp.years.onblur = function (){
+            tmp.createDay();
+        }
+         //给年选项框设置失焦时间
+        tmp.months.onblur = function (){
+            tmp.createDay();
+        }
+        
+</script>
+   
+</html>

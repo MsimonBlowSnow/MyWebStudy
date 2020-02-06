@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 兼容浏览器异步加载js函数
+     --><script >
+            function loadScript(url,callback){
+                var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    if (script.readyState){
+                            script.onreadystatechange = function (){
+                                    if (script.readyState == "complete" || script.readyState == "loaded"){
+                                            callback();
+                                    }
+                            }
+                    }else{
+                            script.onload = function (){
+                                    callback();
+                            }
+                    }
+                    script .src =url;
+                    document.head.appendChild (script);
+            }
+           // loadScript('demo.js',test); 报错，demo.js没有加载完成就开始用test.
+            loadScript('demo.js',function (){test();})
+    </script>
+</head>
+<body>
+    <script>
+        window.onload = function (){
+            alert ("complete"); //document加载完成。
+        }
+        // document.readyState转化为loading -->interactive -->complete 
+        document.onreadystatechange = function (){
+                console.log(document.readyState);//事件状态改变就会触发
+             }
+             //DOMContentLoaded,
+        document.addEventListener("DOMContentLoaded" , function () {
+            console.log('a');//domtree构建完成，即document解析完成
+        },false);    
+    </script>
+    
+</body>
+</html>

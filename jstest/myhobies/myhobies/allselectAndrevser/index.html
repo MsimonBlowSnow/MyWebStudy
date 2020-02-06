@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script defer>
+            var box = {
+                checkbox : document.getElementsByTagName("input"),
+                allSelect : document.getElementById("allSelect"),
+                revserSelect : document.getElementById("revserSelect"),
+                 init : function  () {
+                        this.allSelect.onclick = function (){
+                            for(var i = 0; i<box.checkbox.length; i ++ ){
+                                    if(!box.checkbox[i].checked){
+                                            box.checkbox[i].checked = true;
+                                    }
+                            }
+                        }
+                        this.revserSelect.onclick = function (){
+                            for(var i = 0; i<box.checkbox.length; i ++ ){
+                                if(!box.checkbox[i].checked){
+                                    box.checkbox[i].checked = true;
+                                }else if(box.checkbox[i].checked){
+                                    box.checkbox[i].checked = false;
+                                }
+                            }
+                        }
+                }
+            }
+            box.init();
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="checkbox" name="" id="" value="香蕉">香蕉
+        <input type="checkbox" name="" id="" value="苹果" >苹果
+        <input type="checkbox" name="" id="" value="葡萄">葡萄
+        <input type="checkbox" name="" id="" value="橘子">橘子
+    </form>
+    <button id="allSelect">全选</button>
+    <button id="revserSelect">反选</button>
+   
+    </body>
+</html>

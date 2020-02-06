@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扩展运算符的使用</title>
+    <style>
+        :root{
+            font-size: 50px;
+            color: white;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+        span{
+            display: inline-block;
+            margin: 3px;
+        }
+        body{
+            margin: 0px auto;
+            padding: 0px auot;
+            background-color: yellow;
+        }
+        .heading{
+            text-align: center;
+        }
+        .heading span:hover{
+            transform:translateY(-20px) rotateZ(10deg)  scale(2);
+        }
+    </style>
+</head>
+<body>
+    <h2 class="heading">ming</h2>
+    <script>
+        const h2 = document.getElementsByTagName('h2')[0];
+        const words = h2.innerText;
+       function spanWords(words){
+            const mywords =  [...words].map((value) =>`<span>${value}</span>`).join('');
+            h2.innerHTML = mywords;
+       } 
+       spanWords(words);
+    </script>    
+</body>
+</html>

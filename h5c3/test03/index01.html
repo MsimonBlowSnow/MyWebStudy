@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta charset="UTF-8">  
+      
+   </head>
+   
+   <body>
+      <div id="status" name="status">状态信息</div>
+      <button id ="insert">增加信息</button>
+      <button id="delete">删除</button>
+      <button id="query">查询</button>
+   <script type="text/javascript">
+    var button01 = document.getElementById("insert");
+    var button02 = document.getElementById("delete");
+    var button03 =document.getElementById("query");
+    var db = openDatabase('mydb0d', '1.0', 'Test DB', 2 * 1024 * 1024);
+    var msg;
+    button01.onclick = function (){
+        db.transaction(function (tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+        tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "a")');
+        tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "b")');
+        tx.executeSql('INSERT INTO LOGS (id, log) VALUES (3, "c")');
+        msg = '<p>数据表已创建，且插入了三条数据。</p>';
+        document.querySelector('#status').innerHTML =  msg;
+    });
+}
+   
+    button02.onclick = function (){
+        db.transaction(function (tx) {
+         tx.executeSql('DELETE FROM LOGS  WHERE id=1');
+         msg = '<p>删除 id 为 1 的记录。</p>';
+         document.querySelector('#status').innerHTML =  msg;
+    });
+    }
+    
+   button03.onclick = function () {
+            db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+               var len = results.rows.length, i;
+               msg = "<p>查询记录条数: " + len + "</p>";
+               document.querySelector('#status').innerHTML +=  msg;
+               
+               for (i = 0; i < len; i++){
+                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                  document.querySelector('#status').innerHTML +=  msg;
+               }
+            }, null);
+         });
+   }
+ </script>
+ </body> 
+</html>

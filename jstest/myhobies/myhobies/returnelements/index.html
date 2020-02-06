@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            window.onload=function (){ 
+                   var z = function (){
+                    var nodes1 = document.getElementsByTagName("li");
+                    console.log(nodes1);                //HTMLcollection
+                    console.log(nodes1.length);         //undefine
+                    console.log(nodes1[0]);                 //undefine
+                    for (var i = 0; i < nodes1.length;i++){
+                        nodes1[i].setAttribute("id",i);
+                    }
+                    return nodes1;
+                }();
+                console.log(z[0])           //li标签
+            }      
+            function mychildern(target){
+                var a={
+                    length:0,                                                   //长度，类数组必备
+                    push:Array.prototype.push,          //添加
+                    splice:Array.prototype.splice       //数组化
+                };
+                    var childs = target.childNodes;
+                    for(var i = 0 ; i < childs.length ; i ++ ){
+                            if(childs[i].nodeType == 1)
+                                    a.push(childs[i]);
+                    }
+                        return a;
+            }
+            //返回一个元素的所有孩子元素节点
+            HTMLElement.prototype.mychildern = function (){
+                    var childs = this.childNodes;
+                    var a={
+                        length:0,                                                   //长度，类数组必备
+                        push:Array.prototype.push,          //添加
+                        splice:Array.prototype.splice       //数组化
+                    };
+                   
+                    for( var i = 0; i <childs.length; i++){
+                        if (childs[i].nodeType == 1){
+                            a.push(childs[i]);
+                        }
+                    }
+                    return a;
+            }   
+                    //返回一个距离e节点为n的兄弟节点
+            HTMLElement.prototype.retSibling = function(e ,n){
+                    while(n && e){
+                            if(n > 0){
+                                if(e.nextElementSibling){
+                                e=e.nextElementSibling
+                                }else{
+                                        while(true){
+                                            e=e.nextSibling;
+                                            if(e&&e.nodeType == 1)
+                                                break;      
+                                        }
+                                }
+                                n--;
+                            }
+                            else{
+                                if(e.previousElementSibling){
+                                    e=e.previousElementSibling;
+                                }else{
+                                        while(true){
+                                            e=e.previousSibling;
+                                            if(e&&e.nodeType == 1  )
+                                                break;      
+                                        }
+                                }
+                                n++;
+                            }
+                    }
+                    return e;
+            }        
+            
+ </script>
+</head>
+<body id="a">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+            
+    </script>
+</body>
+</html>

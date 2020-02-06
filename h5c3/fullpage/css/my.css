@@ -1,0 +1,468 @@
+html,body{
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+
+.next{
+    position: fixed;
+    bottom: 50px;
+    left: 80%;
+    opacity: 1;
+    animation: next 0.5s infinite;
+}
+
+@keyframes next{
+    50%{
+        bottom: 30px;
+    }
+    100%{
+        bottom: 50px;
+    }
+}
+/*第一屏*/
+.section1{
+    background:#fadd67 url(../images/t1fpyqfltdxxaiulhh-990-600.png) no-repeat center bottom;
+}
+
+.fly{
+    position: absolute;
+    right:20%;
+    top: 10%;
+}
+
+.book{
+    position: absolute;
+    left:36%;
+    bottom: 335px;
+}
+/*第二屏幕*/
+.section2{
+    background: #84a2d4 url(../images/t1zdgpfi8exxca6rfn-2000-600.png) no-repeat center bottom;
+    z-index: 2;
+}
+.search{
+    width: 900px;
+    height: 495px;
+    position: absolute;
+    transform: translateX(30%);
+    bottom: 0;
+}
+.search1{
+    background: url(../images/search.png) no-repeat;
+    height: 46px;
+    width: 199px;
+    display: none; 
+    position: absolute;
+    left:700px;
+    top:150px;
+}
+.keyword{
+    background: url(../images/search-words.png) no-repeat;
+    width: 100px;
+    height: 33px;
+    opacity: 0;
+    position: absolute;
+    left: 110px;
+    top: 5px;
+}
+.search2{
+    height: 30px;
+    width: 150px;
+    position: absolute;
+    left:350px;
+    display: none;
+    top:150px;
+}
+.search2Img{
+    height: 30px;
+    width: 150px;
+}
+.goods{
+    height: 100px;
+    position: absolute;
+    top: 190px;
+    left: 500px;
+    z-index: -1;
+    display: none;
+}
+.words01{
+    height: 30px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+}
+.words02{
+    height: 30px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+.cover{
+    position: absolute;
+    left: 305px;
+    bottom: 326px;
+    height: 76px;
+    width: 95px;
+    background-color: #fff;
+    display: none;
+}
+.shirt{
+    position: absolute;
+    left: 305px;
+    bottom: 326px;
+    height: 76px;
+    display: none;
+    z-index: 2;
+}
+/*第三屏幕*/
+.section3{
+    background: #ef674d;
+}
+
+.main3{
+    background: url('../images/main.png') no-repeat center center;
+    height: 500px;
+    width: 700px;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+}
+
+.shirt3{
+    position: absolute;
+    left: 120px;
+    bottom: 200px;
+    height: 150px;
+    display: none;
+}
+
+.color3{
+    background: url(../images/img-01.gif) no-repeat;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    left: 400px;
+    top: 250px;
+}
+.color31{
+    background: url(../images/img-01-a.gif) no-repeat;
+}
+.bug3{
+    background: url(../images/btn-01-a.gif) no-repeat;
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    left: 450px;
+    top: 420px;
+}
+.bug3:hover{
+    background: url(../images/btn-01.gif) no-repeat;
+    cursor: pointer;
+}
+.shirt31{
+    position: absolute;
+    left: 120px;
+    bottom: 200px;
+    height: 150px;
+    display: none;
+}
+/*第四屏*/
+.section4{
+    background: #fed url(../images/t1iresfnxaxxca6rfn-2000-600.png) no-repeat center bottom;
+    z-index: -1;
+}
+.cloud{
+    position: absolute;
+    left: 10%;
+    bottom: 500px;
+}
+
+.car{
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+}
+
+.carShirt{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-40%);
+    bottom: 220px;
+    display: none;
+    z-index: -1;
+}
+.words40{
+    height: 30px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+}
+.words41{
+    height: 30px;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+.note4{
+    opacity: 0;
+    position: absolute;
+    bottom:200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.note41{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.note42{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+}
+.section5{
+    background: #d04759 url(../images/t1yisqfa4exxa3gmkg-2000-1500.png);
+    z-index: 1;
+}
+
+.card05{
+    position: absolute;
+    left: 20%;
+    bottom: 200px;
+    z-index: 1;
+}
+.mouse05{
+    position: absolute;
+    left: 70%;
+    height: 320px;
+    top: 0px;
+}
+
+.mouse05A{
+    display: none;
+}
+.hand05{
+    position: absolute;
+    left: 900px;
+    bottom: -400px;
+    z-index: 1;
+}
+.order05{
+    position: absolute;
+    left: 25%;
+    bottom: 220px;
+    z-index: 0;
+}
+.words05{
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+}
+.shirt05{
+    position: absolute;
+    left: 25%;
+    top: -300px;
+    display: none;
+}
+/*第六屏*/
+.section6{
+    background: #84d9ed url(../images/t1dvj.fn0gxxb0_fua-2500-600.png) no-repeat 25% 100%;
+}
+.box06{
+    position: absolute;
+    left: 15%;
+    bottom: 450px;
+    z-index: 2;
+}
+.car06{
+    position: absolute;
+    left: 40%;
+    bottom: 0px;
+    z-index: 3;
+}
+.words06{
+    position: absolute;
+
+}
+.address06{
+    position: absolute;
+    bottom: 116px;
+    left: 50%;
+    display: none;
+}
+.girl06{
+    position: absolute;
+    left: 75%;
+    bottom: 200px;
+    height: 100px;
+    z-index: 1;
+    display: none;
+}
+.words06{
+    position: absolute;
+    left: 40%;
+    bottom: 400px;
+    display: none;
+}
+
+.talk06{
+    position: absolute;
+    left: 60%;
+    z-index: 2;
+    display: none;
+    bottom: 350px;
+}
+.door06{
+    position: absolute;
+    left: 72%;
+    bottom: 116px;
+    display: none;
+}
+.boy06{
+    position: absolute;
+    left: 40%;
+    bottom: 0px;
+    height: 100px;
+}
+.section7{
+    background: #8ac060 url(../images/t1wf1tfctaxxa3gmkg-2000-1500.png) no-repeat 50% 100%;
+}
+.star07{
+    position: absolute;
+    left: 50%;
+    bottom: 439px;
+    height: 20px;
+    width: 0px;
+    background: url(../images/star.png) no-repeat;
+    margin-left: -295px;
+    background-size: 97px;
+}
+
+.good07{
+    position: absolute;
+    left: 29%;
+    bottom: 379px;
+    height: 50px;
+    display: none;
+}
+.section8{
+    background: url(../images/ksgw.png);
+}
+
+.btn08{
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+}
+.btn08A{
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    display: none;
+    transform: translateX(-50%);
+}
+.again08{
+    position: absolute;
+    left: 70%;
+    top: 220px;
+}
+.hand08{
+    position: absolute;
+    left: 100px;
+    top: 200px;
+}
+/*
+    更改默认插件的css配置
+*/
+#fp-nav ul li a span{
+    background-color: #ccc!important;
+}
+
+/**/
+.go{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+}
+
+/*动画制作*/
+.fly1{
+    /*animation和keyframes连用，
+        其中
+        animation: 动画名 动画时间 动画曲线 动画延迟 动画次数 动画方向播发
+        其中safari和chrome使用-webkit-animation来兼容
+            animation-timing-function:动画曲线
+                linear :从头到位速度相同
+                ease: 默认开始速度低然后加快，结束前变慢
+                ease-in: 动画以低速开始。
+                ease-out: 动画以低速结束
+                ease-in-out: 动画以低速开始和结束.
+                cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。	
+            animation-delay: 延迟时间
+            animation-iteration-count: 动画次数
+                n : n次
+                infinite: 无数次
+            animation-direction:
+                normal: 动画正常播放,默认
+                alternate: 动画反向播放       
+                */
+    animation: fly 2s  linear infinite;
+    -webkit-animation: fly 3s  linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        top: 10%;
+    }
+    50% {
+        top: 15%
+    }
+    100% {
+        top: 10%;
+    }
+}
+.book1{
+    animation: book 2s linear infinite;       
+}
+@keyframes book{
+    50% {
+        bottom: 360px;
+    }
+    100% {
+        bottom: 336px;
+    }
+}
+
+/*第四屏白云动画*/
+.animateCloud{
+    animation: cloud 5s  infinite alternate;
+}
+
+@keyframes cloud{
+    0%{
+        left: 10%
+    }
+    50%{
+        left: 30%
+    }
+    100%{
+        left:10%
+    }
+}

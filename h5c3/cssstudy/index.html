@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background:#aaa;
+        }
+            h1 {
+                width: 600px;
+                background-position: center 10px;
+                height: 600px;
+                background-color: #fff;
+            background-image: url( "../../jstest/myhobies/轮播图/img/6.jpg");
+            background-size: 200px;
+            background-repeat: no-repeat;
+                font-size: 50px;
+                color: #aaa;
+                text-shadow: 1px 1px 1px #000, -1px -1px 1px #fff;
+            }
+            h1:last-child{
+                color: #aaa;
+                font-size: 50px;
+                text-shadow: 1px 1px 1px #fff,-1px -1px 1px #000;
+            }
+            main#xing{
+                width: 200px;
+                height: 50px;
+                margin: auto;
+            }
+            main#xingxia{
+                width: 200px;
+                height: 100px;
+                margin: auto;
+                background-color: pink;    
+            }
+            #lt,#rt{
+                float: left;
+                width: 100px;
+                height: 50px;
+                background-color: pink;
+                border-radius: 50px 50px 0px 0px;
+            }
+            #rb,#lb{
+                float: left;
+                width: 50px;
+                height: 500px;
+                background-color: #aaa;
+            }
+            #rb{
+                border-radius: 100px 0px 0px 0px;
+            }
+            #lb{
+                border-radius: 0px 100px 0px  0px;
+            }
+    </style>
+</head>
+<body>
+        <h1>我是凸文字</h1>
+        <h1>我是凹文字</h1>
+        <main  id="xing">
+            <div id="lt"></div>
+            <div id="rt"></div>     
+        </main>
+            <main id="xingxia">   
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div> 
+        </main>
+ 
+</body>
+</html>

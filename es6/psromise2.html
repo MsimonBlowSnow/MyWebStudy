@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise2</title>
+    <script>
+        /*
+            Promise里面的两个参数
+                reslove: 成功时，返回的数据
+                reject: 失败时，返回失败的数据
+        */
+
+
+        /*例1
+        const p = new Promise((reslove,reject)=>{
+           
+            setTimeout(() => {
+                 //返回失败的数据
+                reject(Error('fail'));
+            }, 2000);
+            //返回成功的数据
+            //reslove('success');
+        });
+        p.then(data => {
+            console.log(data);
+        })
+        p.catch(data=> {
+            console.log(data);
+        })
+    */
+        /*例2:*/
+        const users = [
+            {name:"光",id:1},
+            {name:"邕",id:2},
+            {name:"瑜",id:3},
+            {name: "荣",id:4},
+        ];
+        const user =[
+            {name: "光",age:"45"},
+            {name: "瑜",age: "24"},
+            {name: "邕",age:"29"}
+        ]; 
+        function findUser(id){
+            return new Promise((reslove,reject)=>{
+               const user = users.find(user=> user.id === id)
+               if(user)
+                    reslove(user);
+                else
+                 reject("no user with ID");
+            })
+        }
+        function findAgeByUser(men){
+            return new Promise((reslove,reject)=>{
+                const userAge = user.find(u=>u.name == men.name);
+                if(userAge)
+                    reslove(userAge.age);
+                else
+                    reject('no user');
+            })
+        }
+        
+        findUser(4).then(data => {
+            console.log(data)
+            findAgeByUser(data).then(data=>console.log(data)).catch(err=>console.log(err));
+        }).catch(err=>console.log(err));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

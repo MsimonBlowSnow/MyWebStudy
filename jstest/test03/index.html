@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .display {
+                display: inline;
+            }
+            span {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+        <form action="Java">
+            账号 : <input type="text"   id = "account" name ="account"><span id="view"></span>
+            密码 : <input type="password" id ="password" name  = "password">
+            <br><input type="submit" value="注册">
+            <style>
+                input{
+                    display: inline;
+                }
+            </style>
+        </form>     
+</body>
+<script >
+            var useAjax = {
+                account : document.getElementById("account"),
+                password  : document.getElementById("password"),
+                sendMessage : function (){
+                    var xmlhttp;
+                        if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+                                xmlhttp=new XMLHttpRequest();
+                            }
+                        else{// code for IE6, IE5
+                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                         }
+                         xmlhttp.open("get","",true);
+                         xmlhttp.send("account="+useAjax.account.value);
+                        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                         xmlhttp.sendMessage("")
+                         xhr.onreadystatechange = function(){
+                             if (xhr.readyState === 4 && xhr.status === 200) {
+                                         document.getElementById("view").innerHTML = xhr.responseText;
+                                        }                
+                                    }
+                            }
+            }
+            useAjax.account.onblur = function (){
+                useAjax.sendMessage();
+            }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            window.onload = function () {
+                 //setInterval()测试时间定时器  
+                /*  var startTime = new Date().getTime();
+                    setInterval(function (){
+                                var endTime = new Date().getTime();
+                                console.log(endTime - startTime);
+                     },1000); */
+                
+                //clearInterval();清除定时器
+                    /*var i = 0 ;
+                     var timer = setInterval(function(){
+                            if (i != 100){
+                                    i++;
+                                    console.log(i);
+                            }
+                            else
+                                    clearInterval(timer);   //清除该定时器，
+                    },1000);     
+            }; */
+
+            //setTimeout
+                var startTime = new Date().getTime();
+                setTimeout(function(){
+                        console.log("nyb");
+                        endTime = new Date().getTime();
+                        console.log(endTime - startTime);
+                },10000);
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+            window.onload = function () {
+
+                var timerdown = null;
+                var timerup = null;
+                var key = false;
+                document.onmousedown = function (){
+                    timerdown = new Date().getTime();   
+                }
+                document.onclick = function (){
+                   if(key){
+                       console.log("click");
+                       key = false;
+                   }
+                }
+                document.onmouseup = function () {
+                    timeup = new Date().getTime();
+                    if ( timeup - timerdown <= 300){
+                            key = true;
+                    }
+            }
+        } 
+        
+        </script>
+        <style>
+            #mydiv {
+                width: 100px;
+                height: 100px;
+                background-color: black;
+            }
+        </style>
+    <title>Document</title>
+</head>
+<body>
+        <div id ="mydiv" style = "left:0px;top:0px;"></div>
+</body>
+</html>
